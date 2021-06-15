@@ -1,0 +1,142 @@
+@import "./colors.scss";
+
+.calculator {
+	width: 240px;
+	height: 500px;
+	border-radius: 20px;
+	background-color: $dark-background-color;
+
+	.switch-wrapper {
+		height: 70px;
+		width: 100%;
+		padding: 15px;
+
+		.switch {
+			height: fit-content;
+			width: 100px;
+			margin: auto;
+			padding: 10px;
+			border-radius: 12px;
+			background-color: $dark-btn-wrapper-background-color;
+
+			div {
+				width: 50%;
+				height: 20px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				opacity: 0.2;
+				cursor: pointer;
+				color: white;
+
+				img {
+					width: 15px;
+					height: 15px;
+				}
+
+				&.active {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.result {
+		height: 150px;
+		width: 100%;
+		color: white;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: flex-end;
+		font-size: 25px;
+		font-weight: 800;
+	}
+
+	.btn-block {
+		height: 280px;
+		padding: 20px;
+		width: 100%;
+		background-color: $dark-btn-wrapper-background-color;
+		border-radius: 20px;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(5, 1fr);
+		gap: 10px;
+
+		.btn {
+			width: 40px;
+			height: 40px;
+			color: white;
+			background-color: $dark-btn-background-color !important;
+			padding: unset !important;
+			font-weight: 600 !important;
+			font-size: 18px !important;
+			border-radius: 11px !important;
+			box-shadow: 1px 1px 1px 1px $dark-btn-background-color;
+
+			svg {
+				width: 30%;
+				height: 30%;
+			}
+
+			&:focus {
+				outline: 0 !important;
+				box-shadow: unset !important;
+			}
+
+			&.primary {
+				color: white;
+
+				&:hover {
+					color: white;
+				}
+			}
+
+			&.secondary {
+				color: #30d4cc;
+
+				&:hover {
+					color: #30d4cc;
+				}
+			}
+
+			&.tretiary {
+				color: #ea1651;
+
+				&:hover {
+					color: #ea1651;
+				}
+			}
+		}
+	}
+
+	&.light {
+		background-color: $light-background-color;
+		border: 1px solid #ced4da;
+
+		.switch-wrapper {
+			.switch {
+				background-color: $light-btn-wrapper-background-color;
+			}
+		}
+
+		.result {
+			color: $dark-background-color;
+		}
+
+		.btn-block {
+			background-color: $light-btn-wrapper-background-color;
+
+			.btn {
+				background-color: $light-btn-background-color !important;
+				box-shadow: 1px 1px 1px 1px $light-btn-background-color;
+
+				&.primary {
+					color: $dark-btn-background-color !important;
+				}
+			}
+		}
+	}
+}
